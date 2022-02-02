@@ -5,7 +5,7 @@ long long merge(long long *arr,long long *temp,int left,int mid,int right)
     int i,j,k;
     i=left;
     j=mid;
-    k=left;
+    k=left;// k can be 0 also
     int inv_count=0;
     while(i<=mid-1 and j<=right)
     {
