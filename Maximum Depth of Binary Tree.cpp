@@ -1,0 +1,37 @@
+//Problem Link:-https://www.codingninjas.com/codestudio/problems/identical-trees_799364?topList=striver-sde-sheet-problems&leftPanelTab=0
+/**********************************************************
+
+    Following is the Binary Tree Node class structure:
+
+    template <typename T>
+
+    class BinaryTreeNode {
+    public :
+        T data;
+        BinaryTreeNode<T> *left;
+        BinaryTreeNode<T> *right;
+		
+        BinaryTreeNode(T data) {
+            this -> data = data;
+            left = NULL;
+            right = NULL;
+        }
+    };
+
+***********************************************************/
+
+bool identicalTrees(BinaryTreeNode<int>* root1, BinaryTreeNode<int>* root2) {
+    // Write your code here. 
+    if(root1==NULL and root2==NULL){
+        return true;
+    }
+    if(root1==NULL or root2==NULL){
+        return false;
+    }
+    if(root1->data!=root2->data){
+        return false;
+    }
+    
+    return identicalTrees(root1->left,root2->left) and identicalTrees(root1->right,root2->right);
+        
+}
